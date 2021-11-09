@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxpepe.AppController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Filters">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleExitMenuClick" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="About">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" onAction="#handleExitMenuClick" text="Exit">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleExitMenuClick" text="Exit App" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="691.0" prefWidth="253.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="180.0" text="Select Image File" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleExitMenuClick" prefWidth="180.0" text="Edit Matrix" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="120.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
+            <Button disable="true" mnemonicParsing="false" prefWidth="180.0" text="Apply Matrix Filter" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="180.0" stroke="BLACK" strokeType="INSIDE" width="180.0" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" text="Generate Image" />
+            <Button disable="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" text="Restore Original Image" />
+            <RadioButton disable="true" mnemonicParsing="false" prefHeight="18.0" prefWidth="180.0" text="Original Image" />
+            <RadioButton fx:id="modifiedImgRadioButton" disable="true" mnemonicParsing="false" prefHeight="15.0" prefWidth="180.0" text="Modified Image" />
+         </children>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+</BorderPane>
