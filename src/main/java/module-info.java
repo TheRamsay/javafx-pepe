@@ -9,6 +9,7 @@ module com.example.javafxpepe {
 	requires org.kordamp.ikonli.javafx;
 	requires org.kordamp.bootstrapfx.core;
 	requires eu.hansolo.tilesfx;
+	requires javafx.swing;
 
 	opens com.example.javafxpepe to javafx.fxml;
 	exports com.example.javafxpepe;
