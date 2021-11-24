@@ -15,9 +15,11 @@ public class App extends Application {
 	@Override
 	public void start(Stage stage) throws IOException {
 		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("app.fxml"));
-		Scene scene = new Scene(fxmlLoader.load(), 1050, 750);
+		Scene scene = new Scene(fxmlLoader.load(), 1200, 750);
 		stage.setTitle("Hello!");
 		stage.setScene(scene);
+		stage.setMinHeight(600);
+		stage.setMinWidth(1050);
 		stage.show();
 	}
 

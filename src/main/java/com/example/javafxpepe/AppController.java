@@ -6,10 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventTarget;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.RadioButton;
+import javafx.scene.Node;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.DirectoryChooser;
@@ -27,6 +25,9 @@ public class AppController implements Initializable {
 
 	@FXML
 	public RadioButton modifiedImgRadioButton;
+
+	@FXML
+	public MenuBar menuBar;
 
 	@FXML
 	public ImageView imageView;
@@ -49,12 +50,12 @@ public class AppController implements Initializable {
 		imageView.setImage(image);
 
 		imageView.setFitWidth(720);
-		imageView.setFitHeight(620);
+		imageView.setFitHeight(700);
 	}
 
 	@FXML
 	public void handleFileSave(ActionEvent event) {
-		Stage mainStage = (Stage)((Button)event.getSource()).getScene().getWindow();
+		Stage mainStage = (Stage) menuBar.getScene().getWindow();
 		if (currentFile != null) {
 			FileChooser fileChooser = new FileChooser();
 			fileChooser.setInitialFileName(currentFile.getName());
