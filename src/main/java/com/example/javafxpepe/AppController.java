@@ -99,4 +99,27 @@ public class AppController implements Initializable {
 		modifiedImgRadioButton.setSelected(true);
 	}
 
+	@FXML
+	public void applyNegative () {
+		try {
+			BufferedImage originalImage = SwingFXUtils.fromFXImage(imageView.getImage(), null);
+			BufferedImage filteredImage = new BufferedImage(originalImage.getWidth(), originalImage.getHeight(), originalImage.getType());
+			for (int x = 0; x < originalImage.getWidth(); x++) {
+				for (int y = 0; y < originalImage.getHeight(); y++) {
+					int rgbOrig = originalImage.getRGB(x, y);
+					Color c = new Color(rgbOrig);
+					int r = 255 - c.getRed();
+					int g = 255 - c.getGreen();
+					int b = 255 - c.getBlue();
+					Color nc = new Color(r, g, b);
+					filteredImage.setRGB(x, y, nc.getRGB());
+				}
+			}
+			imageView.setImage(SwingFXUtils.toFXImage(filteredImage, null));
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
 }
+
